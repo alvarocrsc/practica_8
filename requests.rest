@@ -1,0 +1,54 @@
+@host = http://localhost:3000
+
+#############
+## AUTHORS ##
+#############
+
+# Request to get all authors
+GET {{host}}/api/author
+
+###
+
+# Request to get a specific author by ID
+GET {{host}}/api/author/1
+
+###
+
+# Request to get all posts by a specific author
+GET {{host}}/api/author/4/posts
+
+###
+
+# Request to create a new author
+POST {{host}}/api/author
+Content-Type: application/json
+
+{
+    "name": "Charles Smith",
+    "email": "charles.smith@example.com",
+    "image": "https://example.com/charles.jpg"
+}
+
+###########
+## POSTS ##
+###########
+
+# Request to get all posts
+GET {{host}}/api/post
+
+###
+
+# Request to get a specific post by ID
+GET {{host}}/api/post/15
+
+###
+
+# Request to create a new post
+POST {{host}}/api/post
+Content-Type: application/json
+
+{
+    "title": "Homemade Pizza Secrets",
+    "description": "Tips and tricks for making delicious pizza at home.",
+    "author_id": 1
+}
