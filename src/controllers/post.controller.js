@@ -64,4 +64,42 @@ const create = async (req, res) => {
     });
 }
 
-module.exports = { getAll, getById, getByAuthorId, create }
+const edit = async (req, res) => {
+    const { title, description, category } = req.body;
+    if (!title || !description || !category) {
+        return res.status(400).json({
+            message: 'Title, description, and category are required'
+        });
+    }
+
+    const { id } = req.params;
+    const result = await Post.updateById(id, req.body);
+    if (result.affectedRows === 0) {
+        return res.status(404).json({
+            message: 'Post not found'
+        });
+    }
+    const post = await Post.selectById(id);
+    res.json({
+        message: 'Post updated successfully',
+        result: post
+    });
+}
+
+const remove = async (req, res) => {
+    const { id } = req.params;
+    const post = await Post.selectById(id);
+    if (!post) {
+        return res.status(404).json({
+            message: 'Post not found'
+        });
+    }
+    const result = await Post.deleteById(id);
+    
+    res.json({
+        message: 'Post deleted successfully',
+        result: post
+    });
+}
+
+module.exports = { getAll, getById, getByAuthorId, create, edit, remove };

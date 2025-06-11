@@ -43,4 +43,42 @@ const create = async (req, res) => {
     });
 }
 
-module.exports = { getAll, getById, create };
+const edit = async (req, res) => {
+    const { name, email, image } = req.body;
+    if (!name || !email || !image) {
+        return res.status(400).json({
+            message: 'Name, email, and image are required'
+        });
+    }
+
+    const { id } = req.params;
+    const result = await Author.updateById(id, req.body);
+    if (result.affectedRows === 0) {
+        return res.status(404).json({
+            message: 'Author not found'
+        });
+    }
+    const author = await Author.selectById(id);
+    res.json({
+        message: 'Author updated successfully',
+        result: author
+    });
+}
+
+const remove = async (req, res) => {
+    const { id } = req.params;
+    const author = await Author.selectById(id);
+    if (!author) {
+        return res.status(404).json({
+            message: 'Author not found'
+        });
+    }
+    const result = await Author.deleteById(id);
+   
+    res.json({
+        message: 'Author deleted successfully',
+        result: author
+    });
+}
+
+module.exports = { getAll, getById, create, edit, remove };

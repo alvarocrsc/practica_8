@@ -67,9 +67,21 @@ const insert = async ({ title, description, category, author_id }) => {
     return result;
 }
 
+const updateById = async (id, { title, description, category, author_id }) => {
+    const [result] = await db.query(`UPDATE post SET title = ?, description = ?, category = ?, author_id = ? WHERE id = ?`, [title, description, category, author_id, id]);
+    return result;
+}
+
+const deleteById = async (id) => {
+    const [result] = await db.query(`DELETE FROM post WHERE id = ?`, [id]);
+    return result;
+}
+
 module.exports = {
     selectAll,
     selectById,
     selectByAuthorId,
-    insert
+    insert,
+    updateById,
+    deleteById
 }

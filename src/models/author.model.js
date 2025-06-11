@@ -22,9 +22,21 @@ const insert = async ({ name, email, image }) => {
     return result;
 }
 
+const updateById = async (id, { name, email, image }) => {
+    const [result] = await db.query(`UPDATE author SET name = ?, email = ?, image = ? WHERE id = ?`, [name, email, image, id]);
+    return result;
+}
+
+const deleteById = async (id) => {
+    const [result] = await db.query(`DELETE FROM author WHERE id = ?`, [id]);
+    return result;
+}
+
 module.exports = {
     selectAll,
     selectById,
     selectByMail,
-    insert
+    insert,
+    updateById,
+    deleteById
 }

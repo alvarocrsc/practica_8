@@ -15,7 +15,7 @@ GET {{host}}/api/author/1
 ###
 
 # Request to get all posts by a specific author
-GET {{host}}/api/author/4/posts
+GET {{host}}/api/author/6/posts
 
 ###
 
@@ -25,9 +25,26 @@ Content-Type: application/json
 
 {
     "name": "Charles Smith",
-    "email": "charles.smith@example.com",
+    "email": "charles.smith4@example.com",
     "image": "https://example.com/charles.jpg"
 }
+
+###
+
+# Request to update an existing author
+PUT {{host}}/api/author/1
+Content-Type: application/json
+
+{
+    "name": "Tom Marshall",
+    "email": "tom.marshall@example.com",
+    "image": "https://example.com/tom.jpg"
+}
+
+###
+
+# Request to delete an author
+DELETE {{host}}/api/author/9
 
 ###########
 ## POSTS ##
@@ -50,5 +67,24 @@ Content-Type: application/json
 {
     "title": "Homemade Pizza Secrets",
     "description": "Tips and tricks for making delicious pizza at home.",
+    "category": "Food",
     "author_id": 1
 }
+
+###
+
+# Request to update an existing post
+PUT {{host}}/api/post/13
+Content-Type: application/json
+
+{
+    "title": "Homemade Pizza Secrets",
+    "description": "Tips and tricks for making delicious pizza at home.",
+    "category": "Food",
+    "author_id": 2
+}
+
+###
+
+# Request to delete a post
+DELETE {{host}}/api/post/14

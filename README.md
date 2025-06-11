@@ -1,7 +1,7 @@
 ====================================================================
 
 # 📘 API - Blog
-This RESTful API allows you to manage authors and posts for a blog platform. You can create, retrieve, and list authors and their posts, as well as create and view posts with their associated author information.
+This RESTful API allows you to manage authors and posts for a blog platform. You can create, retrieve, update, and delete authors and their posts, as well as create and view posts with their associated author information.
 
 **Base URL:** `http:localhost:3000/api`
 
@@ -123,6 +123,59 @@ Response:
 * `409 Conflict`: Author with this email already exists
 * `500 Internal Server Error`: Server error
 
+## Edit an existing author's full data
+
+Method: PUT
+URL: /api/author/<AUTHORID>
+Headers: XXXX
+Body: name, email, image
+
+Response:
+
+* `200: OK`: The object that represents the modified author.
+
+``` json
+{
+  "message": "Author updated successfully",
+  "result": {
+    "id": 1,
+    "name": "Tom Marshall",
+    "email": "tom.marshall@example.com",
+    "image": "https://example.com/tom.jpg"
+  }
+}
+```
+
+* `400 Bad Request`: Name, email, and image are required
+* `404 Not Found`: Author not found
+* `500 Internal Server Error`: Server error
+
+## Delete an existing author
+
+Method: DELETE
+URL: /api/author/<AUTHORID>
+Headers: XXXX
+Body: XXXX
+
+Response: 
+
+* `200: OK`: The object that represents the deleted author.
+
+``` json
+{
+  "message": "Author deleted successfully",
+  "result": {
+    "id": 9,
+    "name": "Tom Marshall",
+    "email": "tom.marshall4@example.com",
+    "image": "https://example.com/tom.jpg"
+  }
+}
+```
+
+* `404 Not Found`: Author not found
+* `500 Internal Server Error`: Server error
+
 ====================================================================
 
 ## 📰 Posts
@@ -226,6 +279,75 @@ Response:
 ```
 
 * `400 Bad Request`: Title, description, category, and author_id are required
+* `500 Internal Server Error`: Server error
+
+## Edit and existing post's full data
+
+Method: PUT
+URL: /api/post/<POSTID>
+Headers: XXXX
+Body: title, description, category, author_id
+
+Response:
+
+* `200: OK`: The object that represents the modified post.
+
+``` json
+{
+  "message": "Post updated successfully",
+  "result": {
+    "id": 13,
+    "title": "Homemade Pizza Secrets",
+    "description": "Tips and tricks for making delicious pizza at home.",
+    "creation_date": "2025-06-10T12:41:11.000Z",
+    "category": "Food",
+    "author_id": 2,
+    "author": {
+      "id": 2,
+      "name": "Emily Johnson",
+      "email": "emily.johnson@example.com",
+      "image": "https://example.com/img/emily.jpg"
+    }
+  }
+}
+```
+
+* `400 Bad Request`: Title, description, category, and author_id are required
+* `404 Not Found`: Post not found
+* `500 Internal Server Error`: Server error
+
+## Delete an existing post
+
+Method: DELETE
+URL: /api/post/<POSTID>
+Headers: XXXX
+Body: XXXX
+
+Response: 
+
+* `200: OK`: The object that represents the deleted post.
+
+``` json
+{
+  "message": "Post deleted successfully",
+  "result": {
+    "id": 14,
+    "title": "Homemade Pizza Secrets",
+    "description": "Tips and tricks for making delicious pizza at home.",
+    "creation_date": "2025-06-11T05:57:20.000Z",
+    "category": "Food",
+    "author_id": 1,
+    "author": {
+      "id": 1,
+      "name": "Tom Marshall",
+      "email": "tom.marshall@example.com",
+      "image": "https://example.com/tom.jpg"
+    }
+  }
+}
+```
+
+* `404 Not Found`: Post not found
 * `500 Internal Server Error`: Server error
 
 ====================================================================
