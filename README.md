@@ -3,6 +3,8 @@
 # 📘 API - Blog
 This RESTful API allows you to manage authors and posts for a blog platform. You can create, retrieve, update, and delete authors and their posts, as well as create and view posts with their associated author information.
 
+Please ensure that you configure the environment variables in the `.env` file to establish a successful connection to your database.
+
 **Base URL:** `http:localhost:3000/api`
 
 ====================================================================
@@ -11,10 +13,10 @@ This RESTful API allows you to manage authors and posts for a blog platform. You
 
 ## Get all the authors
 
-Method: GET
-URL: /api/author
-Headers: XXXX
-Body: XXXX
+**Method:** GET
+**URL:** /api/author
+**Headers:** XXXX
+**Body:** XXXX
 
 Response: 
 
@@ -39,10 +41,10 @@ Response:
 
 ## Get an author from its ID
 
-Method: GET
-URL: /api/author/<AUTHORID>
-Headers: XXXX
-Body: XXXX
+**Method:** GET
+**URL:** /api/author/<AUTHORID>
+**Headers:** XXXX
+**Body:** XXXX
 
 Response: 
 
@@ -62,10 +64,10 @@ Response:
 
 ## Get all the posts an author has published from its ID
 
-Method: GET
-URL: /api/author/<AUTHORID>/posts
-Headers: XXXX
-Body: XXXX
+**Method:** GET
+**URL:** /api/author/<AUTHORID>/posts
+**Headers:** XXXX
+**Body:** XXXX
 
 Response: 
 
@@ -98,10 +100,10 @@ Response:
 
 ## Create a new author
 
-Method: POST
-URL: /api/author
-Headers: XXXX
-Body: name, email, image
+**Method:** POST
+**URL:** /api/author
+**Headers:** XXXX
+**Body:** name, email, image
 
 Response: 
 
@@ -125,10 +127,10 @@ Response:
 
 ## Edit an existing author's full data
 
-Method: PUT
-URL: /api/author/<AUTHORID>
-Headers: XXXX
-Body: name, email, image
+**Method:** PUT
+**URL:** /api/author/<AUTHORID>
+**Headers:** XXXX
+**Body:** name, email, image
 
 Response:
 
@@ -152,10 +154,10 @@ Response:
 
 ## Delete an existing author
 
-Method: DELETE
-URL: /api/author/<AUTHORID>
-Headers: XXXX
-Body: XXXX
+**Method:** DELETE
+**URL:** /api/author/<AUTHORID>
+**Headers:** XXXX
+**Body:** XXXX
 
 Response: 
 
@@ -182,10 +184,10 @@ Response:
 
 ## Get all the posts
 
-Method: GET
-URL: /api/post
-Headers: XXXX
-Body: XXXX
+**Method:** GET
+**URL:** /api/post
+**Headers:** XXXX
+**Body:** XXXX
 
 Response: 
 
@@ -218,10 +220,10 @@ Response:
 
 ## Get a post from its ID
 
-Method: GET
-URL: /api/post/<POSTID>
-Headers: XXXX
-Body: XXXX
+**Method:** GET
+**URL:** /api/post/<POSTID>
+**Headers:** XXXX
+**Body:** XXXX
 
 Response:
 
@@ -249,10 +251,10 @@ Response:
 
 ## Create a new post
 
-Method: POST
-URL: /api/post
-Headers: XXXX
-Body: title, description, category, author_id
+**Method:** POST
+**URL:** /api/post
+**Headers:** XXXX
+**Body:** title, description, category, author_id
 
 Response: 
 
@@ -283,10 +285,10 @@ Response:
 
 ## Edit and existing post's full data
 
-Method: PUT
-URL: /api/post/<POSTID>
-Headers: XXXX
-Body: title, description, category, author_id
+**Method:** PUT
+**URL:** /api/post/<POSTID>
+**Headers:** XXXX
+**Body:** title, description, category, author_id
 
 Response:
 
@@ -318,10 +320,10 @@ Response:
 
 ## Delete an existing post
 
-Method: DELETE
-URL: /api/post/<POSTID>
-Headers: XXXX
-Body: XXXX
+**Method:** DELETE
+**URL:** /api/post/<POSTID>
+**Headers:** XXXX
+**Body:** XXXX
 
 Response: 
 
