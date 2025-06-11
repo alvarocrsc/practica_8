@@ -13,16 +13,16 @@ Please ensure that you configure the environment variables in the `.env` file to
 
 ## Get all the authors
 
-- **Method:** GET  
-- **URL:** /api/author  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `GET`  
+- **URL:** `/api/author`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response: 
 
 * `200 OK`: Return a list of the authors with all their data.
 
-``` json
+```json
 {
   "message": "Authors retrieved successfully",
   "results": [
@@ -41,16 +41,16 @@ Response:
 
 ## Get an author from its ID
 
-- **Method:** GET  
-- **URL:** /api/author/<AUTHORID>  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `GET`  
+- **URL:** `/api/author/<AUTHORID>`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response: 
 
 * `200 OK`: Returns an object containing the author's data.
 
-``` json
+```json
 {
   "id": 1,
   "name": "Tom Smith",
@@ -64,16 +64,16 @@ Response:
 
 ## Get all the posts an author has published from its ID
 
-- **Method:** GET  
-- **URL:** /api/author/<AUTHORID>/posts  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `GET`  
+- **URL:** `/api/author/<AUTHORID>/posts`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response: 
 
 * `200 OK`: Returns an object containing the author's data, including a "posts" field which is an array of all posts published by that author.
 
-``` json
+```json
 {
   "message": "Posts retrieved successfully",
   "author": {
@@ -100,16 +100,16 @@ Response:
 
 ## Create a new author
 
-- **Method:** POST  
-- **URL:** /api/author  
-- **Headers:** XXXX  
-- **Body:** name, email, image  
+- **Method:** `POST`  
+- **URL:** `/api/author`  
+- **Headers:** `XXXX`  
+- **Body:** `name, email, image`  
 
 Response: 
 
 * `201: Created`: The object that represents the new created author.
 
-``` json
+```json
 {
   "message": "Author created successfully",
   "result": {
@@ -127,16 +127,16 @@ Response:
 
 ## Edit an existing author's full data
 
-- **Method:** PUT  
-- **URL:** /api/author/<AUTHORID>  
-- **Headers:** XXXX  
-- **Body:** name, email, image  
+- **Method:** `PUT`  
+- **URL:** `/api/author/<AUTHORID>`  
+- **Headers:** `XXXX`  
+- **Body:** `name, email, image`  
 
 Response:
 
 * `200: OK`: The object that represents the modified author.
 
-``` json
+```json
 {
   "message": "Author updated successfully",
   "result": {
@@ -154,16 +154,16 @@ Response:
 
 ## Delete an existing author
 
-- **Method:** DELETE  
-- **URL:** /api/author/<AUTHORID>  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `DELETE`  
+- **URL:** `/api/author/<AUTHORID>`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response: 
 
 * `200: OK`: The object that represents the deleted author.
 
-``` json
+```json
 {
   "message": "Author deleted successfully",
   "result": {
@@ -184,16 +184,16 @@ Response:
 
 ## Get all the posts
 
-- **Method:** GET  
-- **URL:** /api/post  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `GET`  
+- **URL:** `/api/post`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response: 
 
 * `200 OK`: An array containing all the posts, each one with all the author data associated to them.
 
-``` json
+```json
 {
   "message": "Posts retrieved successfully",
   "results": [
@@ -220,16 +220,16 @@ Response:
 
 ## Get a post from its ID
 
-- **Method:** GET  
-- **URL:** /api/post/<POSTID>  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `GET`  
+- **URL:** `/api/post/<POSTID>`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response:
 
 * `200 OK`: Returns An object with the post data and all the author data associated to it.
 
-``` json 
+```json
 {
   "id": 1,
   "title": "Getting Started with Node.js",
@@ -251,16 +251,16 @@ Response:
 
 ## Create a new post
 
-- **Method:** POST  
-- **URL:** /api/post  
-- **Headers:** XXXX  
-- **Body:** title, description, category, author_id  
+- **Method:** `POST`  
+- **URL:** `/api/post`  
+- **Headers:** `XXXX`  
+- **Body:** `title, description, category, author_id`  
 
 Response: 
 
 * `201: Created`: The object that represents the new created post.
 
-``` json
+```json
 {
   "message": "Post created successfully",
   "result": {
@@ -283,18 +283,18 @@ Response:
 * `400 Bad Request`: Title, description, category, and author_id are required
 * `500 Internal Server Error`: Server error
 
-## Edit and existing post's full data
+## Edit an existing post's full data
 
-- **Method:** PUT  
-- **URL:** /api/post/<POSTID>  
-- **Headers:** XXXX  
-- **Body:** title, description, category, author_id  
+- **Method:** `PUT`  
+- **URL:** `/api/post/<POSTID>`  
+- **Headers:** `XXXX`  
+- **Body:** `title, description, category, author_id`  
 
 Response:
 
 * `200: OK`: The object that represents the modified post.
 
-``` json
+```json
 {
   "message": "Post updated successfully",
   "result": {
@@ -320,16 +320,16 @@ Response:
 
 ## Delete an existing post
 
-- **Method:** DELETE  
-- **URL:** /api/post/<POSTID>  
-- **Headers:** XXXX  
-- **Body:** XXXX  
+- **Method:** `DELETE`  
+- **URL:** `/api/post/<POSTID>`  
+- **Headers:** `XXXX`  
+- **Body:** `XXXX`  
 
 Response: 
 
 * `200: OK`: The object that represents the deleted post.
 
-``` json
+```json
 {
   "message": "Post deleted successfully",
   "result": {
